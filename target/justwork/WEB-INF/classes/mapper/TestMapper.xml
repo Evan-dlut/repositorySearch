@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zhao.dao.TestDao">
+
+    <select id="select" parameterType="zhao.domain.TestDo" resultType="zhao.domain.TestDo">
+        select * FROM test_table
+    </select>
+
+    <insert id="insert" parameterType="zhao.domain.TestDo">
+        insert into test_table
+        (test) VALUES (#{test})
+    </insert>
+
+    <update id="update" parameterType="zhao.domain.TestDo">
+        UPDATE test_table SET test = #{test}
+        where id = #{id}
+    </update>
+</mapper>
